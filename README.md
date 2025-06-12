@@ -1,6 +1,6 @@
 <div style="text-align:center">
 
-![Capacities Unofficial MCP Banner](assets/natkitten_capacities_vibe_coded.png)
+![Banner showing pixel-art CRT cat and title “Capacities.io Unofficial MCP”](assets/natkitten_capacities_vibe_coded.png)
 
 # Unofficial Capacities.io MCP Tools
 
@@ -229,3 +229,7 @@ This is the most reliable method. It runs the MCP server on your own VPS. This s
         {"Content-Type": "application/json"}
         ```
 4.  Add the server and test it.
+
+---
+
+Licensed under the MIT License — see [**LICENSE**](https://github.com/natkitten/capacities-mcp-bridge-unofficial/tree/main?tab=MIT-1-ov-file) for details
