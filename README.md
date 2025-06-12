@@ -12,6 +12,8 @@
 
 This project provides several methods for connecting to the [Capacities](https://capacities.io/) note taking app API using the Model Context Protocol (MCP). It was **100% vibe-coded** with the help of Gemini 2.5 Pro. While it works, it relies on third-party adapter services and, in some cases, your own hosting. Use at your own risk.
 
+For everyone looking for a native Bun implementation, there exists another project https://github.com/jem-computer/capacities-mcp
+
 ---
 
 ## Table of Contents
