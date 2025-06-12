@@ -29,7 +29,7 @@ For everyone looking for a native Bun implementation, there exists another proje
 
 ## General Prerequisites
 
-*   A **Capacities API Token**. You can generate this from your Capacities account settings if youo have a paid account.
+*   A **Capacities API Token**. You can generate this from your Capacities account settings if you have a paid account.
 *   The **MCP Link Generator** tool: [**https://mcp-link.vercel.app/**](https://mcp-link.vercel.app/)
 
 ---
@@ -45,13 +45,13 @@ This method uses the included `capacities-claude-bridge.js` script to act as a t
 2.  **Download the Bridge Code:** Open a terminal (like Git Bash, Command Prompt, or PowerShell) and run the following commands:
     ```bash
     # Clone the repository to a permanent location
-    git clone https://github.com/natkitten/capacities-mcp-tools.git
+    git clone https://github.com/natkitten/capacities-mcp-bridge-unofficial.git
     
     # Navigate into the project folder
-    cd capacities-mcp-tools
+    cd capacities-mcp-bridge-unofficial
     ```
 
-3.  **Install Dependencies:** While inside the `capacities-mcp-tools` folder, run:
+3.  **Install Dependencies:** While inside the `capacities-mcp-bridge-unofficial` folder, run:
     ```bash
     npm install
     ```
@@ -93,12 +93,12 @@ This method uses the included `capacities-claude-bridge.js` script to act as a t
       "mcpServers": {
         "capacities": {
           "command": "node",
-          "args": ["C:\\path\\to\\your\\capacities-mcp-tools\\capacities-claude-bridge.js"]
+          "args": ["C:\\path\\to\\your\\capacities-mcp-bridge-unofficial\\capacities-claude-bridge.js"]
         }
       }
     }
     ```
-    **CRUCIAL:** Replace `C:\\path\\to\\your\\capacities-mcp-tools` with the actual, absolute path to the folder where you cloned the repository. Remember to use double backslashes `\\`.
+    **CRUCIAL:** Replace `C:\\path\\to\\your\\capacities-mcp-bridge-unofficial` with the actual, absolute path to the folder where you cloned the repository. Remember to use double backslashes `\\`.
 3.  Save the `claude_desktop_config.json` file and restart Claude Desktop.
 
 ---
