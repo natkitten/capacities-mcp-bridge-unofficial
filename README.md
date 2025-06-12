@@ -101,8 +101,7 @@ This method uses the included `capacities-claude-bridge.js` script to act as a t
     **CRUCIAL:** Replace `C:\\path\\to\\your\\capacities-mcp-bridge-unofficial` with the actual, absolute path to the folder where you cloned the repository. Remember to use double backslashes `\\`.
 3.  Save the `claude_desktop_config.json` file and restart Claude Desktop.
 
-<div style="position: relative; padding-bottom: 64.97933884297521%; height: 0;"><iframe src="https://www.loom.com/embed/0424e4dfb8f04c4abb8dfa7d5ca39d3e?sid=44e64fd6-87ad-4200-b0f1-43538431c3d3" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
-
+<video src="assets/loom-demo.mp4" width="800" controls></video>
 ---
 
 ## Setup 2: Simple SSE for IDEs (Cline/RooCode in VS Code)
