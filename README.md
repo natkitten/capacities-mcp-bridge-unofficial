@@ -120,7 +120,10 @@ Current rate-limits (per user / 60 s window):
 
 For everything else (errors, structures, OpenAPI spec), see the official docs ➜ <https://api.capacities.io/docs/>.
 
-<video src="assets/loom-demo.mp4" width="800" controls></video>
+
+https://github.com/user-attachments/assets/257aada5-5f65-4aec-b7da-4766452e3cb5
+
+
 ---
 
 ## Setup 2: Simple SSE for IDEs (Cline/RooCode in VS Code)
