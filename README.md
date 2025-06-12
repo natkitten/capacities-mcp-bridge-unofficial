@@ -232,4 +232,4 @@ This is the most reliable method. It runs the MCP server on your own VPS. This s
 
 ---
 
-Licensed under the MIT License — see [**LICENSE**](https://github.com/natkitten/capacities-mcp-bridge-unofficial/tree/main?tab=MIT-1-ov-file) for details
+Licensed under the MIT License — see [LICENSE](LICENSE) for details
