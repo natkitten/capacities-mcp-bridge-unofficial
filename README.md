@@ -101,6 +101,25 @@ This method uses the included `capacities-claude-bridge.js` script to act as a t
     **CRUCIAL:** Replace `C:\\path\\to\\your\\capacities-mcp-bridge-unofficial` with the actual, absolute path to the folder where you cloned the repository. Remember to use double backslashes `\\`.
 3.  Save the `claude_desktop_config.json` file and restart Claude Desktop.
 
+### Capacities API at a glance
+
+| Endpoint | What it does | Typical use-case |
+|----------|--------------|------------------|
+| **`GET /spaces`** | Lists all Capacities spaces the token can access | Show a picker or verify the token |
+| **`GET /space-info`** | Returns structures, collections & property definitions of a space | Needed once at startup to map IDs to human labels |
+| **`GET /search`** | Full-text or title search across one or many spaces | Let the LLM find existing notes before it creates new ones |
+| **`POST /save-weblink`** | Saves an external URL (and optional tags/markdown) into a space | Quick bookmarking from chat |
+| **`POST /save-to-daily-note`** | Appends Markdown to today’s daily note in a space | Fast journaling / meeting-note dump |
+
+Current rate-limits (per user / 60 s window):
+
+* `/spaces` & `/space-info`: **5** requests  
+* `/search`: **120** requests  
+* `/save-weblink`: **10** requests  
+* `/save-to-daily-note`: **5** requests  
+
+For everything else (errors, structures, OpenAPI spec), see the official docs ➜ <https://api.capacities.io/docs/>.
+
 <video src="assets/loom-demo.mp4" width="800" controls></video>
 ---
 
