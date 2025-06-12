@@ -1,0 +1,24 @@
+{
+  "name": "capacities-claude-bridge",
+  "version": "1.0.0",
+  "description": "A Node.js bridge for connecting Claude Desktop to the Capacities API via an MCP adapter.",
+  "main": "capacities-claude-bridge.js",
+  "scripts": {
+    "start": "node capacities-claude-bridge.js"
+  },
+  "keywords": [
+    "capacities",
+    "claude",
+    "mcp",
+    "bridge",
+    "api"
+  ],
+  "author": "natkitten",
+  "license": "MIT",
+  "dependencies": {
+    "eventsource": "^2.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
