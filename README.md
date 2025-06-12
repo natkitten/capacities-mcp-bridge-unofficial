@@ -88,7 +88,6 @@ This method uses the included `capacities-claude-bridge.js` script to act as a t
 2.  Open the file and add the `mcp_bridges` section as shown below.
     ```json
     {
-      // ... other claude settings
       "mcpServers": {
         "capacities": {
           "command": "node",
