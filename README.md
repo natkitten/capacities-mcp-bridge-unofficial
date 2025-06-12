@@ -102,6 +102,12 @@ This method uses the included `capacities-claude-bridge.js` script to act as a t
 3.  Save the `claude_desktop_config.json` file and restart Claude Desktop.
 
 
+
+https://github.com/user-attachments/assets/257aada5-5f65-4aec-b7da-4766452e3cb5
+
+
+
+
 ---
 
 ## Setup 2: Simple SSE for IDEs (Cline/RooCode in VS Code)
