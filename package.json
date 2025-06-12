@@ -14,9 +14,11 @@
     "api"
   ],
   "author": "natkitten",
+  "type": "commonjs",
   "license": "MIT",
   "dependencies": {
-    "eventsource": "^2.0.2"
+    "eventsource": "^4.0.0",
+    "node-fetch": "^2.7.0"
   },
   "engines": {
     "node": ">=16.0.0"

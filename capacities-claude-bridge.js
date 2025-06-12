@@ -5,8 +5,10 @@ const readline = require('readline');
 const https = require('https');
 const { URL } = require('url');
 
-// IMPORTANT: Each user must replace this placeholder with the URL
-// they generate from https://mcp-link.vercel.app/ as per the README.
+// SSE_URL generated from mcp-link.vercel.app with:
+// - OpenAPI: capacities_openapi_2.json (snake_case operationIds, title: "capacities")
+// - Path Filters: EMPTY
+// - Encoding: Base64 (JSON Encoded)
 const SSE_URL = 'PASTE_YOUR_GENERATED_MCP_ENDPOINT_URL_HERE';
 
 function log(message) {
@@ -14,7 +16,7 @@ function log(message) {
   console.error(`[${timestamp}] ${message}`);
 }
 
-const rl = readline.createInterface({
+const rl = readline.createInterface({ // This was missing in the snippet
   input: process.stdin,
   output: process.stdout
 });
@@ -25,18 +27,17 @@ let state = {
   initialized: false,
 };
 
-// This mapping translates client-friendly names (snake_case operationIds from the OpenAPI spec)
-// to the names actually registered by the mcp-openapi-to-mcp-adapter
-// when "Path Filters" is left empty in mcp-link.vercel.app.
+// EXPERIMENTAL: Assuming adapter's default (no 'f') uses new title "capacities"
+// and might simplify the prefix.
 const toolNameMapping = {
-  'get_spaces': 'mcplink_capacities_api_get_spaces',
-  'get_space_info': 'mcplink_capacities_api_get_space_info',
-  'search_content': 'mcplink_capacities_api_post_search',
-  'save_weblink': 'mcplink_capacities_api_post_save_weblink',
-  'save_to_daily_note': 'mcplink_capacities_api_post_save_to_daily_note'
+  'get_spaces': 'mcplink_capacities_get_spaces',
+  'get_space_info': 'mcplink_capacities_get_space_info',
+  'search_content': 'mcplink_capacities_post_search',
+  'save_weblink': 'mcplink_capacities_post_save_weblink',
+  'save_to_daily_note': 'mcplink_capacities_post_save_to_daily_note'
 };
 
-rl.on('line', (line) => {
+rl.on('line', (line) => { // This is line 33 where the error occurred
   log(`RECEIVED: ${line}`);
   let message;
   try {
@@ -59,9 +60,11 @@ rl.on('line', (line) => {
     
     else if (message.method === 'initialized' || message.method === 'notifications/initialized') {
       log(`Received ${message.method} from client.`);
+      // No response needed for notifications
     }
     
     else if (message.method === 'tools/list') {
+      // Advertise snake_case operationId names to the client
       const response = {
         jsonrpc: '2.0',
         id: message.id,
@@ -120,8 +123,8 @@ rl.on('line', (line) => {
 });
 
 function connectSSE() {
-  if (!SSE_URL || SSE_URL.includes('PASTE_YOUR_GENERATED')) {
-    log('Error: SSE_URL is not configured. Please edit this script and paste the URL generated from https://mcp-link.vercel.app/');
+  if (!SSE_URL || SSE_URL === 'PASTE_YOUR_LATEST_SSE_URL_GENERATED_WITH_EMPTY_PATH_FILTERS_HERE') {
+    log('Error: SSE_URL is not configured. Please update capacities-mcp-bridge.js with the URL generated from https://mcp-link.vercel.app/');
     return;
   }
   log(`Connecting to SSE endpoint: ${SSE_URL}`);
@@ -221,5 +224,5 @@ process.stdin.resume();
 process.on('uncaughtException', (error) => { log(`Uncaught exception: ${error.message}`); });
 process.on('unhandledRejection', (reason) => { log(`Unhandled rejection: ${reason}`); });
 
-log('Capacities MCP Bridge started. Client: snake_case names, Adapter: mcplink_... names.');
+log('Capacities MCP Bridge started. Client: snake_case names, Adapter: EXPERIMENTAL mcplink_capacities_... names.');
 log('Waiting for stdio input from MCP client (e.g., Claude Desktop)...');
